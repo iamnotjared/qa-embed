@@ -19,7 +19,7 @@
 		</div>
 		<div class="row">
 			<div class="cell">Widget ID:</div>
-			<div class="cell table-info-cell-value" id="widgetId">1182720</div>
+			<div class="cell table-info-cell-value" id="widgetId">2352128</div>
 		</div>
 		<div class="row">
 			<div class="cell">Processor:</div>
@@ -44,10 +44,10 @@
 				<h2 class="cell">Donate Now!</h2>
 			</div>
 		</div>
-<script type="text/javascript" id="bloomerangForm1182720"></script>
+<script type="text/javascript" id="bloomerangForm2352128"></script>
 <pre><script type="text/javascript">
-    var insertForm1182720 = function() {
-        var html1182720 = '<style text=\'text/css\'>' + 
+    var insertForm2352128 = function() {
+        var html2352128 = '<style text=\'text/css\'>' + 
 '.donation-form label{color: #404040;' + 
 '                display: block;}' + 
 '' + 
@@ -180,36 +180,16 @@
 '</div>' + 
 '    <div class="section recurring">' + 
 '      <div class="field checkbox recurring" >' + 
-'<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input><span class="label">Show my support by making this a recurring donation</span></label>' + 
+'<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input><span class="label">Show my support by making this a monthly donation</span></label>' + 
 '</div>' + 
 '<div class="field label recurring-paypal-venmo-label-info" >' + 
 '<label for="recurring-paypal-venmo-label-info"><span class="label">(Not available for payments made through PayPal or Venmo.)</span></label>' + 
 '<html id="recurring-paypal-venmo-label-info" name="recurring-paypal-venmo-label-info" type="label" maxlength="255"></html>' + 
 '</div>' + 
-'<div class="field  frequency required" style="display: none">' + 
-'<label for="frequency">Frequency<span class="required-star">*</span></label>' + 
-'<select id="frequency" name="frequency" class="required"><option value=""></option>' + 
-'<option value="Daily">Daily</option>' + 
-'<option value="Weekly">Weekly</option>' + 
-'<option value="Monthly" selected>Monthly</option>' + 
-'<option value="Quarterly">Quarterly</option>' + 
-'<option value="SemiAnnually">Every six months</option>' + 
-'<option value="Yearly">Yearly</option>' + 
-'</select>' + 
-'</div>' + 
-'<div class="field date start-date required" style="display: none">' + 
-'<label for="start-date"><span class="label">Start Date</span><span class="required-star">*</span></label>' + 
-'<input id="start-date" name="start-date" class="validDate startDateVenmo required" type="date" placeholder="mm/dd/yyyy"></input>' + 
-'</div>' + 
 '' + 
 '</div>' + 
 '    ' + 
-'    <div class="section true-impact">' + 
-'      <div class="field checkbox true-impact" >' + 
-'<label for="true-impact"><input id="true-impact" name="true-impact" type="checkbox" maxlength="255"></input><span class="label">Add [amount] to help cover our transaction fees</span></label>' + 
-'</div>' + 
-'' + 
-'</div>' + 
+'    ' + 
 '    ' + 
 '    <div class="section contact">' + 
 '      <h3>Contact Information</h3>' + 
@@ -608,7 +588,7 @@
 '' + 
 '</div>' + 
 '    <div class="section captcha">' + 
-'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha1182720"></div>' + 
+'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha2352128"></div>' + 
 '' + 
 '</div>' + 
 '    <div class="section payment">' + 
@@ -619,31 +599,19 @@
 '<div class="field radio CreditCard required" >' + 
 '<label for="CreditCard"><input id="CreditCard" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Credit Card</span></label>' + 
 '</div>' + 
-'<div class="field radio Savings required" >' + 
-'<label for="Savings"><input id="Savings" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Savings</span></label>' + 
-'</div>' + 
-'<div class="field radio Checking required" >' + 
-'<label for="Checking"><input id="Checking" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Checking</span></label>' + 
-'</div>' + 
 '<div class="field radio PayPalVenmo required" >' + 
 '<label for="PayPalVenmo"><input id="PayPalVenmo" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">PayPal or Venmo</span></label>' + 
 '</div>' + 
-'<div class="field number routingNumber required" style="display: none">' + 
-'<label for="routingNumber"><span class="label">Routing Number</span><span class="required-star">*</span></label>' + 
-'<input id="routingNumber" name="routing-number" class="required" type="number" maxlength="255"></input>' + 
-'</div>' + 
-'<div class="field number accountNumber required" style="display: none">' + 
-'<label for="accountNumber"><span class="label">Account Number</span><span class="required-star">*</span></label>' + 
-'<input id="accountNumber" name="account-number" class="required" type="number" maxlength="255"></input>' + 
-'</div>' + 
-'<div class="field text payment required" id="stripe-cc-fields">' + 
-'                                  <label for="card-element">' + 
-'                                    <span class="label">Credit or debit card</span>' + 
-'                                    <span class="required-star">*</span>' + 
-'                                  </label>' + 
-'                                  <div id="card-element"></div>' + 
-'                                  <div id="card-errors" role="alert"></div>' + 
-'                                </div>' + 
+'<div class="field text payment required" id="one-pay-fields">' + 
+'                                          <div class="payment-container">' + 
+'                                                <div class="loading-indicator" id="loading-indicator">' + 
+'                                                    <div class="loading-text">Loading secure checkout frame...</div>' + 
+'                                                </div>' + 
+'                                                <div id="payments-ui-iframe" style="padding: 20px; background: #ffffff; max-width:360px; ">' + 
+'                                                    <iframe id="payments-iframe" style="width:100%; height:650px" frameborder="0" src="https://1pay.qa-develop.dev-bloom-apps.net/#/checkout"></iframe>' + 
+'                                                </div>' + 
+'                                            </div>' + 
+'                                        </div>' + 
 '' + 
 '</div>' + 
 '    ' + 
@@ -657,52 +625,41 @@
 '  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
 '</div>' + 
 '' + 
-'' +  '';var successHtml1182720 = '<div class=\'donation-success\'>' +
+'' +  '';var successHtml2352128 = '<div class=\'donation-success\'>' +
                                                        '  <h2>Thank You for Your Donation!</h2>' +
                                                        '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
                                                         '   ' + 
-                                                        '</div>';( function($) {if (Bloomerang.useDonationId('1182720')) { 
-                                Bloomerang.useProcessor('102401', 'StripeExpress', 'pk_test_ql0ubtsHyv0J0GZJ5po6MZYw');
-                            } else {
-                                html1182720 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
-                            }if (jQuery('#bloomerangForm1182720').length) {
+                                                        '</div>';( function($) {if (!Bloomerang.useDonationId('2352128')) { 
+                                    html2352128 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
+                                }if (jQuery('#bloomerangForm2352128').length) {
                         
                     if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
-                        html1182720 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
+                        html2352128 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
                         ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
                     }
-                        jQuery('#bloomerangForm1182720').after(html1182720);
+                        jQuery('#bloomerangForm2352128').after(html2352128);
+                         if (!Bloomerang.SpreedlyScriptLoaded) {
+                                            Bloomerang.Util.load('https://core.spreedly.com/iframe/express-2.min.js', 
+                                                function() { return SpreedlyExpress != undefined; },
+                                                function() {
+                                                    SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
+                                                    Bloomerang.initSpreedly = function() {
+                                                        SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'laurenppvenmo' });
+                                                    };
+                                                    Bloomerang.initSpreedly();
+                                                });
+                                        }
+                                        Bloomerang.SpreedlyScriptLoaded = true;
                         
-                         Bloomerang.Util.requireStripe(function() {
-                              Bloomerang.Util.Stripe = Stripe('pk_test_ql0ubtsHyv0J0GZJ5po6MZYw');
-
-                              Bloomerang.useKey('pub_5de281b5-7806-11ee-942f-025f2469c001');
-
-                              // Means we didn't set the client secret for self-hosted forms so we create one!
-                              if(!Bloomerang.StripePaymentElement) {
-                                Bloomerang.Util.createInitialIntentForSelfHosted(false);
-                              }
-                              else {
-                                Bloomerang.Util.mountStripePaymentElements(false);
-                              }
-
-                              jQuery(".donation-form #express-submit").val("Donate Now");
-                              jQuery(".registration-form #express-submit").val("Register Now");
-                              jQuery(".membership-form #express-submit").val("Start Membership • $0.00");
-                              jQuery("#express-submit").attr("disabled", false);
-                              Bloomerang.donationFormStripeOnBehalfOfFlag = true; 
-                              Bloomerang.StripeAccountId = 'acct_1O7KRfQZcupbTMNh';
-                            });
                         
-                        Bloomerang.Util.requirePayPal('Afl3qCBuAQmTuR-BdWyh_KzfycI9IHBBf7HDoOEIaGYUzW5G1jswsT5jDtdPaFuUlJK241JYdc1NgUFh', function() {
-                         Bloomerang.Data.PayPal.IsPayPalVenmoEnabled = true;
-                         Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;
-                         Bloomerang.Data.PayPal.IsVenmoSameDayDonationEnabled = false;
-                         Bloomerang.Util.mountPayPalVenmoElements();
-                         Bloomerang.Data.PayPal.ProcessorAccountId = 'SP9K6P5J4GT9J';
-                         Bloomerang.Data.PayPal.PartnerFeeId = 'AB89EKPL6ASRS';
-                       });
-                        jQuery("#donation-form .section.onepay h3").remove();
+                        Bloomerang.Data.PayPal.IsPayPalVenmoEnabled = false;
+                                           jQuery("#donation-form .recurring-paypal-venmo-label-info").remove();
+                                           jQuery("#paypal-button-container").remove();
+                                           jQuery("#donation-form .PayPalVenmo").remove();
+                                           jQuery("#donation-form .PayPal").remove();
+                                           jQuery("#donation-form .Venmo").remove();
+Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.Data.PayPal.IsVenmoSameDayDonationEnabled = false;
+                        jQuery("#donation-form .DebitCard").remove();jQuery("#donation-form .CreditCard").remove();jQuery("#donation-form .section.payment h3").remove();jQuery("#donation-form .section.onepay h3").remove();
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
@@ -753,7 +710,7 @@
                                 function() { return Bloomerang.gRecaptchaLoaded; },
                                 function() {
                                     jQuery('.section.captcha').removeAttr('style');
-                                    jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha1182720', { 'sitekey' : '6LdXvesqAAAAACK0sGWS-aU6xfHx4TuKSIFT4-L8' }));
+                                    jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha2352128', { 'sitekey' : '6LdXvesqAAAAACK0sGWS-aU6xfHx4TuKSIFT4-L8' }));
                                     
                                     if((Bloomerang.donationFormReCaptchaV3Flag && Bloomerang.isBloomerangHostedForm && Bloomerang.isDonationForm) || (Bloomerang.donationFormReCaptchaV3SelfHostedFlag && !Bloomerang.isBloomerangHostedForm && Bloomerang.reCaptchaV3SiteKey && Bloomerang.isDonationForm)) {
                                         jQuery('.section.captcha').attr('style', 'display: none');
@@ -808,10 +765,10 @@
                            }
                             
                     
-                    Bloomerang.transactionFee = 0.3; 
-                    Bloomerang.transactionFeeRate = 0.032; 
-                    Bloomerang.transactionFeeEft = 0.3; 
-                    Bloomerang.transactionFeeRateEft = 0.018;
+                    Bloomerang.transactionFee = ; 
+                    Bloomerang.transactionFeeRate = ; 
+                    Bloomerang.transactionFeeEft = 0; 
+                    Bloomerang.transactionFeeRateEft = 0;
                     Bloomerang.transactionFeePayPal = 0.49; 
                     Bloomerang.transactionFeeRatePayPal = 0.032; 
                     
@@ -929,7 +886,7 @@
             jQuery("#donation-processing-container").hide();
             var formContainer = jQuery("#donation-form-container");
             formContainer.show();
-            formContainer.html(successHtml1182720);
+            formContainer.html(successHtml2352128);
             Bloomerang.scrollToElement(formContainer);
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
@@ -1594,10 +1551,10 @@
                         script.type = 'text/javascript';
                         script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1764601079';
                         document.getElementsByTagName('head')[0].appendChild(script);
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm1182720(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm2352128(); })});
                     }
                     else {
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm1182720(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm2352128(); })});
                     }
                 };
 
