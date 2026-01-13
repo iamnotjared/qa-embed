@@ -186,6 +186,9 @@
 '<div class="field radio 1367043 required" >' + 
 '<label for="1367043"><input id="1367043" name="registration-type" class="required" type="radio" value="40.000000" maxlength="255" data-short-name="Hosted" data-ticket-quantity="1" data-registration-type-value="1369090" data-non-deductible-amount="0.000000"></input><span class="label">$40.00 - Hosted</span></label>' + 
 '</div>' + 
+'<div class="field radio 2683904 required" >' + 
+'<label for="2683904"><input id="2683904" name="registration-type" class="required" type="radio" value="60.000000" maxlength="255" data-short-name="Event" data-ticket-quantity="1" data-registration-type-value="2681857" data-non-deductible-amount="0.000000"></input><span class="label">$60.00 - Event</span></label>' + 
+'</div>' + 
 '<div class="field radio cannot-attend required" >' + 
 '<label for="cannot-attend"><input id="cannot-attend" name="registration-type" class="required" type="radio" maxlength="255" data-short-name="Donation" data-registration-type-value="839681"></input><span class="label">Sorry, I can\'t attend, but I would like to show my support by making a donation</span></label>' + 
 '</div>' + 
@@ -635,18 +638,25 @@
 '    <div class="section payment">' + 
 '      <h3>Payment Information</h3>' + 
 '      <div class="field text payment required" id="one-pay-fields">' + 
-'                                          <div class="payment-container">' + 
-'                                                <div class="loading-indicator" id="loading-indicator">' + 
-'                                                    <div class="loading-text">Loading secure checkout frame...</div>' + 
-'                                                </div>' + 
-'                                                <div id="payments-ui-iframe" style="padding: 20px; background: #ffffff; max-width:360px; ">' + 
-'                                                    <iframe id="payments-iframe" style="width:100%; height:650px" frameborder="0" src="https://1pay.qa-develop.dev-bloom-apps.net/#/checkout"></iframe>' + 
-'                                                </div>' + 
-'                                            </div>' + 
+'                                    <div class="payment-container">' + 
+'                                        <div class="loading-indicator" id="loading-indicator">' + 
+'                                            <div class="loading-text">Loading secure checkout frame...</div>' + 
 '                                        </div>' + 
+'                                        <div id="payments-ui-iframe" style="padding: 20px; background: #ffffff; max-width:360px;">' + 
+'                                            <iframe id="payments-iframe"' + 
+'                                                    style="width:100%; height:650px"' + 
+'                                                    frameborder="0"' + 
+'                                                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"' + 
+'                                                    allow="payment *; encrypted-media *; fullscreen *; accelerometer; autoplay; clipboard-write; picture-in-picture; publickey-credentials-get *; camera *"' + 
+'                                                    referrerpolicy="strict-origin-when-cross-origin">' + 
+'                                            </iframe>' + 
+'                                        </div>' + 
+'                                    </div>' + 
+'                                </div>' + 
 '' + 
 '</div>' + 
 '    ' + 
+'    <p id="preview-text" style="font-style:italic;font-size:13px;font-family:Prompt, sans-serif;letter-spacing:0.25px;display:none;">More payment information appears on your live form. For a complete preview, go to the forms list and select View Hosted Form.</p>' + 
 '    <div class="btn-group">' + 
 '      <input class="btn btn-submit btn-submit-registration" type="submit" value="Register Now" id="express-submit" disabled="true" />' + 
 '    </div>' + 
@@ -675,20 +685,25 @@
                         
                         Bloomerang.Util.requireStripe(function() {
                               Bloomerang.useKey('pub_a69acdf9-c170-11f0-b497-02e39ee94c2d');
-                              
-                              Bloomerang.Util.mountOnePayCheckout();
+                              jQuery("form.donation-form .DebitCard, #donation-form .DebitCard").remove();jQuery("form.donation-form .CreditCard, #donation-form .CreditCard").remove();Bloomerang.Data.PayPal.IsPayPalVenmoEnabled = false;
+                                           jQuery("form.donation-form .recurring-paypal-venmo-label-info, #donation-form .recurring-paypal-venmo-label-info").remove();
+                                           jQuery("#paypal-button-container").remove();
+                                           jQuery("form.donation-form .PayPalVenmo, #donation-form .PayPalVenmo").remove();
+                                           jQuery("form.donation-form .PayPal, #donation-form .PayPal").remove();
+                                           jQuery("form.donation-form .Venmo, #donation-form .Venmo").remove();jQuery("form.donation-form .section.payment h3, #donation-form .section.payment h3").remove();jQuery("form.donation-form .section.movedpayment h3, #donation-form .section.movedpayment h3").remove();
+                              Bloomerang.Util.mountOnePayCheckout('https://1pay.qa-develop.dev-bloom-apps.net/checkout/index.html');
                               jQuery("#express-submit").attr("disabled", false);
                             });
                         Bloomerang.Data.PayPal.IsPayPalVenmoEnabled = false;
                              jQuery("#paypal-button-container").remove();
 Bloomerang.Data.PayPal.IsPayPalVenmoEnabled = false;
-                                           jQuery("#donation-form .recurring-paypal-venmo-label-info").remove();
+                                           jQuery("form.donation-form .recurring-paypal-venmo-label-info, #donation-form .recurring-paypal-venmo-label-info").remove();
                                            jQuery("#paypal-button-container").remove();
-                                           jQuery("#donation-form .PayPalVenmo").remove();
-                                           jQuery("#donation-form .PayPal").remove();
-                                           jQuery("#donation-form .Venmo").remove();
+                                           jQuery("form.donation-form .PayPalVenmo, #donation-form .PayPalVenmo").remove();
+                                           jQuery("form.donation-form .PayPal, #donation-form .PayPal").remove();
+                                           jQuery("form.donation-form .Venmo, #donation-form .Venmo").remove();
 Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.Data.PayPal.IsVenmoSameDayDonationEnabled = false;
-                        jQuery("#donation-form .DebitCard").remove();jQuery("#donation-form .CreditCard").remove();jQuery("#donation-form .section.payment h3").remove();
+                        
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
@@ -794,8 +809,8 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                            }
                             
                     
-                    Bloomerang.transactionFee = ; 
-                    Bloomerang.transactionFeeRate = ; 
+                    Bloomerang.transactionFee = 0.3; 
+                    Bloomerang.transactionFeeRate = 0.032; 
                     Bloomerang.transactionFeeEft = 0; 
                     Bloomerang.transactionFeeRateEft = 0;
                     Bloomerang.transactionFeePayPal = 0.49; 
@@ -803,6 +818,10 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                     
                     Bloomerang.useKey('pub_a69acdf9-c170-11f0-b497-02e39ee94c2d');
 
+        if (typeof isPreviewMode !== 'undefined' && isPreviewMode) {
+          document.querySelector('#preview-text').style.display = 'block';
+        }
+        
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
         };
@@ -1267,12 +1286,12 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1764601079';
+                        script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1768311353';
                         document.getElementsByTagName('head')[0].appendChild(script);
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm1364994(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm1364994(); })});
                     }
                     else {
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm1364994(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm1364994(); })});
                     }
                 };
 
@@ -1293,6 +1312,6 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
 
                 startBloomerangLoad();
 </script></pre>
-</div>
+	</div>
 </head>
 </html>
