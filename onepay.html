@@ -603,18 +603,25 @@
 '<label for="PayPalVenmo"><input id="PayPalVenmo" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">PayPal or Venmo</span></label>' + 
 '</div>' + 
 '<div class="field text payment required" id="one-pay-fields">' + 
-'                                          <div class="payment-container">' + 
-'                                                <div class="loading-indicator" id="loading-indicator">' + 
-'                                                    <div class="loading-text">Loading secure checkout frame...</div>' + 
-'                                                </div>' + 
-'                                                <div id="payments-ui-iframe" style="padding: 20px; background: #ffffff; max-width:360px; ">' + 
-'                                                    <iframe id="payments-iframe" style="width:100%; height:650px" frameborder="0" src="https://1pay.qa-develop.dev-bloom-apps.net/#/checkout"></iframe>' + 
-'                                                </div>' + 
-'                                            </div>' + 
+'                                    <div class="payment-container">' + 
+'                                        <div class="loading-indicator" id="loading-indicator">' + 
+'                                            <div class="loading-text">Loading secure checkout frame...</div>' + 
 '                                        </div>' + 
+'                                        <div id="payments-ui-iframe" style="padding: 20px; background: #ffffff; max-width:360px;">' + 
+'                                            <iframe id="payments-iframe"' + 
+'                                                    style="width:100%; height:650px"' + 
+'                                                    frameborder="0"' + 
+'                                                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"' + 
+'                                                    allow="payment *; encrypted-media *; fullscreen *; accelerometer; autoplay; clipboard-write; picture-in-picture; publickey-credentials-get *; camera *"' + 
+'                                                    referrerpolicy="strict-origin-when-cross-origin">' + 
+'                                            </iframe>' + 
+'                                        </div>' + 
+'                                    </div>' + 
+'                                </div>' + 
 '' + 
 '</div>' + 
 '    ' + 
+'    <p id="preview-text" style="font-style:italic;font-size:13px;font-family:Prompt, sans-serif;letter-spacing:0.25px;display:none;">More payment information appears on your live form. For a complete preview, go to the forms list and select View Hosted Form.</p>' + 
 '    <div class="btn-group">' + 
 '      <input class="btn btn-submit btn-submit-donation" type="submit" value="Donate Now" id="express-submit" disabled="true" />' + 
 '    </div>' + 
@@ -628,7 +635,7 @@
 '' +  '';var successHtml1083392 = '<div class=\'donation-success\'>' +
                                                        '  <h2>Thank You for Your Donation!</h2>' +
                                                        '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
-                                                        '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/kindfulapp\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e  ' + 
+                                                        '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/kindful\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/kindfulapp\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
                                                         '</div>';( function($) {if (Bloomerang.useDonationId('1083392')) { 
                                 Bloomerang.useProcessor('12289', 'OnePay', 'pk_test_ql0ubtsHyv0J0GZJ5po6MZYw');
                             } else {
@@ -644,18 +651,23 @@
                         
                         Bloomerang.Util.requireStripe(function() {
                               Bloomerang.useKey('pub_a69acdf9-c170-11f0-b497-02e39ee94c2d');
-                              
-                              Bloomerang.Util.mountOnePayCheckout();
+                              jQuery("form.donation-form .DebitCard, #donation-form .DebitCard").remove();jQuery("form.donation-form .CreditCard, #donation-form .CreditCard").remove();Bloomerang.Data.PayPal.IsPayPalVenmoEnabled = false;
+                                           jQuery("form.donation-form .recurring-paypal-venmo-label-info, #donation-form .recurring-paypal-venmo-label-info").remove();
+                                           jQuery("#paypal-button-container").remove();
+                                           jQuery("form.donation-form .PayPalVenmo, #donation-form .PayPalVenmo").remove();
+                                           jQuery("form.donation-form .PayPal, #donation-form .PayPal").remove();
+                                           jQuery("form.donation-form .Venmo, #donation-form .Venmo").remove();jQuery("form.donation-form .section.payment h3, #donation-form .section.payment h3").remove();jQuery("form.donation-form .section.movedpayment h3, #donation-form .section.movedpayment h3").remove();
+                              Bloomerang.Util.mountOnePayCheckout('https://1pay.qa-develop.dev-bloom-apps.net/checkout/index.html');
                               jQuery("#express-submit").attr("disabled", false);
                             });
                         Bloomerang.Data.PayPal.IsPayPalVenmoEnabled = false;
-                                           jQuery("#donation-form .recurring-paypal-venmo-label-info").remove();
+                                           jQuery("form.donation-form .recurring-paypal-venmo-label-info, #donation-form .recurring-paypal-venmo-label-info").remove();
                                            jQuery("#paypal-button-container").remove();
-                                           jQuery("#donation-form .PayPalVenmo").remove();
-                                           jQuery("#donation-form .PayPal").remove();
-                                           jQuery("#donation-form .Venmo").remove();
+                                           jQuery("form.donation-form .PayPalVenmo, #donation-form .PayPalVenmo").remove();
+                                           jQuery("form.donation-form .PayPal, #donation-form .PayPal").remove();
+                                           jQuery("form.donation-form .Venmo, #donation-form .Venmo").remove();
 Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.Data.PayPal.IsVenmoSameDayDonationEnabled = false;
-                        jQuery("#donation-form .DebitCard").remove();jQuery("#donation-form .CreditCard").remove();jQuery("#donation-form .section.payment h3").remove();
+                        
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
@@ -761,8 +773,8 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                            }
                             
                     
-                    Bloomerang.transactionFee = 0; 
-                    Bloomerang.transactionFeeRate = 0; 
+                    Bloomerang.transactionFee = 0.3; 
+                    Bloomerang.transactionFeeRate = 0.032; 
                     Bloomerang.transactionFeeEft = 0; 
                     Bloomerang.transactionFeeRateEft = 0;
                     Bloomerang.transactionFeePayPal = 0.49; 
@@ -770,6 +782,10 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                     
                     Bloomerang.useKey('pub_a69acdf9-c170-11f0-b497-02e39ee94c2d');
 
+        if (typeof isPreviewMode !== 'undefined' && isPreviewMode) {
+          document.querySelector('#preview-text').style.display = 'block';
+        }
+        
         Bloomerang.isDonationForm=true;
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
@@ -1545,12 +1561,12 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1764601079';
+                        script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1768311353';
                         document.getElementsByTagName('head')[0].appendChild(script);
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm1083392(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm1083392(); })});
                     }
                     else {
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm1083392(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm1083392(); })});
                     }
                 };
 
@@ -1570,7 +1586,7 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                 };
 
                 startBloomerangLoad();
-</script></pre>
+</script></pre>	
 	</div>
 </body>
 	</html>
