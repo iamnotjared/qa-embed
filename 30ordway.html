@@ -31,7 +31,7 @@
 		</div>
 		<div class="row">
 			<div class="cell">Self Hosted:</div>
-			<div class="cell table-info-cell-value">Yes Updated 1/16</div>
+			<div class="cell table-info-cell-value">Yes Updated 1/23</div>
 		</div>
 	</div>
 	<div class="roundedblock gradtobottomright left">
@@ -196,6 +196,10 @@
 '<option value="SemiAnnually">Every six months</option>' + 
 '<option value="Yearly">Yearly</option>' + 
 '</select>' + 
+'</div>' + 
+'<div class="field date start-date required" style="display: none">' + 
+'<label for="start-date"><span class="label">Start Date</span><span class="required-star">*</span></label>' + 
+'<input id="start-date" name="start-date" class="validDate startDateVenmo required" type="date" placeholder="mm/dd/yyyy"></input>' + 
 '</div>' + 
 '' + 
 '</div>' + 
@@ -1117,6 +1121,9 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
         Bloomerang.Util.updateDonateButtonText = function() {
             var amount = Bloomerang.Util.getDonationAmount();
             var impactAmount = Bloomerang.Util.getDonationTrueImpactAmount();
+            if (Bloomerang.Util.isProcessorOnePay() && Bloomerang.Data.DigitalWallet && (Bloomerang.Data.DigitalWallet === "GooglePay" || Bloomerang.Data.DigitalWallet === "ApplePay")) {
+              Bloomerang.Util.sendOnePayTotalAmount((amount + impactAmount)*100);
+            }
             jQuery(".btn-submit-donation").val("Donate Now " + accounting.formatMoney(amount + impactAmount));
         };
 
@@ -1582,7 +1589,7 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1768498608';
+                        script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1769196939';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm128000(); })});
                     }
