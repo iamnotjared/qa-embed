@@ -31,7 +31,7 @@
 		</div>
 		<div class="row">
 			<div class="cell">Self Hosted:</div>
-			<div class="cell table-info-cell-value">Yes Updated 1/23 no recurring</div>
+			<div class="cell table-info-cell-value">Yes Updated 1/23 6pm</div>
 		</div>
 	</div>
 	<div class="roundedblock gradtobottomright left">
@@ -180,11 +180,26 @@
 '</div>' + 
 '    <div class="section recurring">' + 
 '      <div class="field checkbox recurring" >' + 
-'<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input><span class="label">Show my support by making this a monthly donation</span></label>' + 
+'<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input><span class="label">Show my support by making this a recurring donation</span></label>' + 
 '</div>' + 
 '<div class="field label recurring-paypal-venmo-label-info" >' + 
 '<label for="recurring-paypal-venmo-label-info"><span class="label">(Not available for payments made through PayPal or Venmo.)</span></label>' + 
 '<html id="recurring-paypal-venmo-label-info" name="recurring-paypal-venmo-label-info" type="label" maxlength="255"></html>' + 
+'</div>' + 
+'<div class="field  frequency required" style="display: none">' + 
+'<label for="frequency">Frequency<span class="required-star">*</span></label>' + 
+'<select id="frequency" name="frequency" class="required"><option value=""></option>' + 
+'<option value="Daily">Daily</option>' + 
+'<option value="Weekly">Weekly</option>' + 
+'<option value="Monthly" selected>Monthly</option>' + 
+'<option value="Quarterly">Quarterly</option>' + 
+'<option value="SemiAnnually">Every six months</option>' + 
+'<option value="Yearly">Yearly</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field date start-date required" style="display: none">' + 
+'<label for="start-date"><span class="label">Start Date</span><span class="required-star">*</span></label>' + 
+'<input id="start-date" name="start-date" class="validDate startDateVenmo required" type="date" placeholder="mm/dd/yyyy"></input>' + 
 '</div>' + 
 '' + 
 '</div>' + 
