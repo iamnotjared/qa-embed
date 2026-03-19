@@ -625,7 +625,7 @@
 '                                            <iframe id="payments-iframe"' + 
 '                                                    style="width:100%; height:650px"' + 
 '                                                    frameborder="0"' + 
-'                                                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"' + 
+'                                                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals allow-popups-to-escape-sandbox"' + 
 '                                                    allow="payment *; encrypted-media *; fullscreen *; accelerometer; autoplay; clipboard-write; picture-in-picture; publickey-credentials-get *; camera *"' + 
 '                                                    referrerpolicy="strict-origin-when-cross-origin">' + 
 '                                            </iframe>' + 
@@ -731,11 +731,11 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                             Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
                                 function() { return Bloomerang.gRecaptchaLoaded; },
                                 function() {
-                                    jQuery('.section.captcha').removeAttr('style');
+                                    jQuery('.donation-form .section.captcha').removeAttr('style');
                                     jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha310273', { 'sitekey' : '6Le9RUwsAAAAAMMVTQIGMn7fmqCXfWdclx7UAElh' }));
                                     
                                     if((Bloomerang.donationFormReCaptchaV3Flag && Bloomerang.isBloomerangHostedForm && Bloomerang.isDonationForm) || (Bloomerang.donationFormReCaptchaV3SelfHostedFlag && !Bloomerang.isBloomerangHostedForm && Bloomerang.reCaptchaV3SiteKey && Bloomerang.isDonationForm)) {
-                                        jQuery('.section.captcha').attr('style', 'display: none');
+                                        jQuery('.donation-form .section.captcha').attr('style', 'display: none');
                                     }
                                 },
                                 true,
@@ -750,7 +750,7 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                                               async function success (result) {
                                                 if(parseFloat(result.Score) < Bloomerang.gRecaptchaV3Threshold) {
                                                     Bloomerang.isForcePuzzle = true;
-                                                    jQuery('.section.captcha').attr('style', 'display: block');
+                                                    jQuery('.donation-form .section.captcha').attr('style', 'display: block');
                                                 } else {
 
                                                     const initialRecaptchaV3Token = await getRecaptchaV3Token();
@@ -769,7 +769,7 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                                                 
                                                function failure (result) {
                                                 Bloomerang.isForcePuzzle = true;
-                                                jQuery('.section.captcha').attr('style', 'display: block');
+                                                jQuery('.donation-form .section.captcha').attr('style', 'display: block');
                                                }
                                                 
                                                var data = {
@@ -1581,7 +1581,7 @@ Bloomerang.Data.PayPal.IsPayPalPaymentMethodVaultingEnabled = false;Bloomerang.D
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1770052793';
+                        script.src = 'https://qa-develop-crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=1772807358';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm310273(); })});
                     }
